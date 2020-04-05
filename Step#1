@@ -1,8 +1,46 @@
 In this step we will learn the Junit 5 various annotation
+ /**
+   * @BeforeAll The annotated method will be run before all test methods in the
+   *            test class. This method must be static.
+   */
 @BeforeAll
+/**
+   * @BeforeEach The annotated method will be run before each test method in the
+   *             test class.
+   * @BeforeEach annotated method MUST NOT be a static method otherwise it will
+   *             throw runtime error.
+   * 
+   *             org.junit.platform.commons.JUnitException: @BeforeEach method
+   *             'public static void
+   *             com.myStudy.JUnit5AnnotationsTest.setupThis()' must not be
+   *             static.
+   * 
+   */
 @BeforeEach
+/**
+   * @Tag Mark test methods or test classes with tags for test discovering and
+   *      filtering
+   */
 @Tag("DEV")
+/**
+   * @Test It is used to mark a method as junit test
+   */
 @Test
+/**
+* To define test name it will show when you execute test, in Junit test result bar
+*/
 @DisplayName("Add operation test")
+/**
+   * @AfterEach The annotated method will be run after each test method in the
+   *            test class.
+   */
 @AfterEach
+  /**
+   * @AfterAll The annotated method will be run after all test methods in the
+   *           test class. This method must be static.
+   */
+  @AfterAll
+  /**
+  * For repeated test, which is executing multiple times
+  */
 @RepeatedTest(2)
